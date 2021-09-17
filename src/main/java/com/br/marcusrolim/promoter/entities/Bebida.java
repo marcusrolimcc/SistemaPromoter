@@ -18,7 +18,7 @@ public class Bebida implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	private String nome;
-	private Double teorAucoligo;
+	private Double teorAucolico;
 	private TipoBebida tipoBebida;
 	
 	public Bebida() {}
@@ -27,7 +27,7 @@ public class Bebida implements Serializable{
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.teorAucoligo = teorAucoligo;
+		this.teorAucolico = teorAucoligo;
 		this.tipoBebida = tipoBebida;
 	}
 
@@ -48,11 +48,11 @@ public class Bebida implements Serializable{
 	}
 
 	public Double getTeorAucoligo() {
-		return teorAucoligo;
+		return teorAucolico;
 	}
 
 	public void setTeorAucoligo(Double teorAucoligo) {
-		this.teorAucoligo = teorAucoligo;
+		this.teorAucolico = teorAucoligo;
 	}
 	
 	public TipoBebida getTipoBebida() {
