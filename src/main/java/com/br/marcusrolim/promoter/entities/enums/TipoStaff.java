@@ -2,34 +2,36 @@ package com.br.marcusrolim.promoter.entities.enums;
 
 public enum TipoStaff {
 
-	GERÊNCIA(1, "Gerência"),
-	ATRAÇÃO(2, "Atração"),
-	BAR(3, "Bar"),
-	SEGURANÇA(4, "Segurança"),
-	ÁREA_PUBLICO(5, "Área publico"),
-	ENTRADA(6, "Entrada"),
-	LIMPEZA(7, "Limpeza");
+	GERÊNCIA(1, "Gerência", 500.00),
+	ATRAÇÃO(2, "Atração", 150.00),
+	BAR(3, "Bar", 250.00),
+	SEGURANÇA(4, "Segurança", 250.00),
+	ÁREA_PUBLICO(5, "Área publico", 1000.00),
+	ENTRADA(6, "Entrada", 150.00),
+	LIMPEZA(7, "Limpeza", 50.00);
 	
 	private int id;
 	private String descricao;
-	private TipoStaff(int id, String descricao) {
+	private double valor;
+	
+	private TipoStaff(int id, String descricao, double valor) {
 		this.id = id;
 		this.descricao = descricao;
+		this.valor = valor;
 	}
 	
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public String getDescricao() {
 		return descricao;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+
+	public double getValor() {
+		return valor;
 	}
-	
+
 	public static TipoStaff toEnum(Integer id) {
 		if(id == null)
 			return null;
