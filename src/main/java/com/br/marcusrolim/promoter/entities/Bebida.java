@@ -19,7 +19,7 @@ public class Bebida implements Serializable{
 	private Integer id;
 	private String nome;
 	private Double teorAucolico;
-	private TipoBebida tipoBebida;
+	private Integer tipoBebida;
 	
 	public Bebida() {}
 	
@@ -28,7 +28,7 @@ public class Bebida implements Serializable{
 		this.id = id;
 		this.nome = nome;
 		this.teorAucolico = teorAucoligo;
-		this.tipoBebida = tipoBebida;
+		this.tipoBebida = tipoBebida.getId();
 	}
 
 	public Integer getId() {
@@ -56,11 +56,11 @@ public class Bebida implements Serializable{
 	}
 	
 	public TipoBebida getTipoBebida() {
-		return tipoBebida;
+		return TipoBebida.toEnum(tipoBebida);
 	}
 
 	public void setTipoBebida(TipoBebida tipoBebida) {
-		this.tipoBebida = tipoBebida;
+		this.tipoBebida = tipoBebida.getId();
 	}
 
 	@Override
