@@ -1,5 +1,7 @@
 package com.br.marcusrolim.promoter.resources;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,12 @@ public class BebidaResource {
 
 	@Autowired
 	private BebidaService service;
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public ResponseEntity<?> listar(Integer id){
+		List<Bebida> obj = service.listar(id);
+		return ResponseEntity.ok().body(obj);
+		}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> Find(@PathVariable Integer id) {

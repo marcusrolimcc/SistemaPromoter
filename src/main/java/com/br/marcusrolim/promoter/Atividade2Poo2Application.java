@@ -8,12 +8,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.br.marcusrolim.promoter.entities.Bebida;
+import com.br.marcusrolim.promoter.entities.Estado;
 import com.br.marcusrolim.promoter.entities.Organizacao;
 import com.br.marcusrolim.promoter.entities.Pagamento;
 import com.br.marcusrolim.promoter.entities.enums.TipoBebida;
 import com.br.marcusrolim.promoter.entities.enums.TipoPagamento;
 import com.br.marcusrolim.promoter.entities.enums.TipoStaff;
 import com.br.marcusrolim.promoter.repositories.BebidaRepository;
+import com.br.marcusrolim.promoter.repositories.EstadoRepository;
 import com.br.marcusrolim.promoter.repositories.OrganizacaoRepository;
 import com.br.marcusrolim.promoter.repositories.PagamentoRepository;
 
@@ -28,6 +30,9 @@ public class Atividade2Poo2Application implements CommandLineRunner{
 	
 	@Autowired
 	private OrganizacaoRepository organizacaoRepository;
+	
+	@Autowired
+	private EstadoRepository estadoRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Atividade2Poo2Application.class, args);
@@ -54,5 +59,8 @@ public class Atividade2Poo2Application implements CommandLineRunner{
 		
 		organizacaoRepository.saveAll(Arrays.asList(org1, org2, org3));
 		
+		Estado est1 = new Estado(null, "Mato Grosso do Sul", "MS");
+		
+		estadoRepository.saveAll(Arrays.asList(est1));
 	}
 }
